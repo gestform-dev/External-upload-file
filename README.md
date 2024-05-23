@@ -1,7 +1,5 @@
 # Introduction
 
-# Introduction
-
 This application is a powerful document management system, designed to digitize
 documents easily. As a fork of
 the [paperless-ngx](https://github.com/paperless-ngx)
