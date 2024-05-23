@@ -1,0 +1,25 @@
+<app-page-header title="Dashboard" i18n-title>
+</app-page-header>
+
+<div class="row">
+  <div class="col-lg-8">
+    <div tourAnchor="tour.dashboard">
+      <ng-container *ngIf="savedViewService.loading">
+        <div class="spinner-border spinner-border-sm me-2" role="status"></div>
+        <ng-container i18n>Loading...</ng-container>
+      </ng-container>
+
+      <app-welcome-widget *ngIf="settingsService.offerTour()" (dismiss)="completeTour()"></app-welcome-widget>
+
+      <app-upload-file-widget></app-upload-file-widget>
+      <div *appIfPermissions="{ action: PermissionAction.View, type: PermissionType.SavedView }">
+        <ng-container *ngFor="let v of savedViewService.dashboardViews; first as isFirst">
+          <app-saved-view-widget [savedView]="v"></app-saved-view-widget>
+        </ng-container>
+      </div>
+    </div>
+  </div>
+  <div class="col-lg-4">
+    <app-statistics-widget></app-statistics-widget>
+  </div>
+</div>

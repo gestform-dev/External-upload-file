@@ -1,0 +1,154 @@
+{
+	"ACCOUNT_CREATION_SUCCESS": {
+		"file": "email-templates/account_creation_success.template.html",
+		"subject": "Confirmation de la création de votre compte",
+		"data": [
+			{
+				"label": "first_name",
+				"extracted_key": "first_name",
+				"type": "user"
+			},
+			{
+				"label": "last_name",
+				"extracted_key": "last_name",
+				"type": "user"
+			},
+			{
+				"label": "logo_url",
+				"extracted_key": "logo_url",
+				"type": "user_config"
+			},
+			{
+				"label": "signature_url",
+				"extracted_key": "signature_url",
+				"type": "user_config"
+			}
+		]
+	},
+	"ACCOUNT_CREATION_FAILURE": {
+		"file": "email-templates/account_creation_failure.template.html",
+		"subject": "Erreur lors de la creation de compte",
+		"data": [
+			{
+				"label": "first_name",
+				"extracted_key": "first_name",
+				"type": "user"
+			},
+			{
+				"label": "last_name",
+				"extracted_key": "last_name",
+				"type": "user"
+			},
+			{
+				"label": "logo_url",
+				"extracted_key": "logo_url",
+				"type": "user_config",
+				"no_user_default_value": ""
+			},
+			{
+				"label": "signature_url",
+				"extracted_key": "signature_url",
+				"type": "user_config",
+				"no_user_default_value": ""
+			}
+		]
+	},
+	"DEPOSIT_DOCUMENT_SUCCESS": {
+		"file": "email-templates/deposit_document_success.template.html",
+		"subject": "",
+		"data": [
+			{
+				"label": "first_name",
+				"extracted_key": "first_name",
+				"type": "user"
+			},
+			{
+				"label": "last_name",
+				"extracted_key": "last_name",
+				"type": "user"
+			},
+			{
+				"label": "deposit_date",
+				"extracted_key": "deposit_date",
+				"type": "input"
+			},
+			{
+				"label": "logo_url",
+				"extracted_key": "logo_url",
+				"type": "user_config"
+			},
+			{
+				"label": "signature_url",
+				"extracted_key": "signature_url",
+				"type": "user_config"
+			}
+		]
+	},
+	"DEPOSIT_DOCUMENT_ERROR": {
+		"file": "email-templates/deposit_document_error.template.html",
+		"subject": "Document non traité",
+		"data": [
+			{
+				"label": "first_name",
+				"extracted_key": "first_name",
+				"type": "user"
+			},
+			{
+				"label": "last_name",
+				"extracted_key": "last_name",
+				"type": "user"
+			},
+			{
+				"label": "document_error",
+				"extracted_key": "document_error",
+				"type": "input"
+			},
+			{
+				"label": "deposit_date",
+				"extracted_key": "deposit_date",
+				"type": "input"
+			},
+			{
+				"label": "logo_url",
+				"extracted_key": "logo_url",
+				"type": "user_config"
+			},
+			{
+				"label": "signature_url",
+				"extracted_key": "signature_url",
+				"type": "user_config"
+			}
+		]
+	},
+	"RESET_PASSWORD": {
+		"file": "email-templates/reset_password.template.html",
+		"subject": "Réinitialisation du mot de passe",
+		"data": [
+			{
+				"label": "first_name",
+				"extracted_key": "first_name",
+				"type": "user"
+			},
+			{
+				"label": "last_name",
+				"extracted_key": "last_name",
+				"type": "user"
+			},
+			{
+				"label": "link",
+				"extracted_key": "link",
+				"type": "input"
+			},
+			{
+				"label": "logo_url",
+				"extracted_key": "logo_url",
+				"type": "user_config"
+			},
+			{
+				"label": "signature_url",
+				"extracted_key": "signature_url",
+				"type": "user_config"
+			}
+		]
+	}
+}

@@ -1,0 +1,121 @@
+[[source]]
+url = "https://pypi.python.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[[source]]
+url = "https://www.piwheels.org/simple"
+verify_ssl = true
+name = "piwheels"
+
+[packages]
+dateparser = "~=1.1"
+# WARNING: django does not use semver.
+#          Only patch versions are guaranteed to not introduce breaking changes.
+django = "~=4.1.9"
+django-cors-headers = "*"
+django-celery-results = "*"
+django-compression-middleware = "*"
+django-guardian = "*"
+django-extensions = "*"
+django-filter = "~=22.1"
+djangorestframework = "~=3.14"
+djangorestframework-guardian = "*"
+filelock = "*"
+gunicorn = "*"
+imap-tools = "*"
+langdetect = "*"
+pathvalidate = "*"
+pillow = "*"
+pikepdf = "*"
+python-gnupg = "*"
+python-dotenv = "*"
+python-dateutil = "*"
+python-magic = "*"
+python-ipware = "*"
+psycopg2 = "*"
+rapidfuzz = "*"
+redis = { extras = ["hiredis"], version = "*" }
+scikit-learn = "~=1.2"
+whitenoise = "~=6.3"
+watchdog = "~=2.2"
+whoosh = "~=2.7"
+inotifyrecursive = "~=0.3"
+ocrmypdf = "~=14.0"
+tqdm = "*"
+tika-client = "*"
+channels = "~=4.0"
+channels-redis = "*"
+uvicorn = { extras = ["standard"], version = "*" }
+#uvicorn = "*"
+#uvloop = "*"
+concurrent-log-handler = "*"
+pyzbar = "*"
+mysqlclient = "==2.1.0"
+celery = { extras = ["redis"], version = "*" }
+setproctitle = "*"
+nltk = "*"
+pdf2image = "*"
+flower = "*"
+bleach = "*"
+zxing-cpp = { version = "*", platform_machine = "== 'x86_64'" }
+#
+# Packages locked due to issues (try to check if these are fixed in a release every so often)
+#
+# Pin this until piwheels is building 1.9 (see https://www.piwheels.org/project/scipy/)
+scipy = "==1.8.1"
+# v4 brings in extra dependencies for features not used here
+reportlab = "==3.6.12"
+# Pin this until piwheels is building a newer version (see https://www.piwheels.org/project/cryptography/)
+cryptography = "==40.0.1"
+watchgod = "*"
+requests = "*"
+django-crispy-forms = "*"
+crispy-bootstrap4 = "*"
+confluent-kafka = "*"
+pybars3 = "*"
+sentry-sdk = "*"
+beautifulsoup4 = "*"
+tenacity = "*"
+django-phonenumber-field = "*"
+django-phonenumbers = "*"
+
+[dev-packages]
+# Linting
+black = "*"
+pre-commit = "*"
+ruff = "*"
+# Testing
+factory-boy = "*"
+pytest = "*"
+pytest-cov = "*"
+pytest-django = "*"
+pytest-httpx = "*"
+pytest-env = "*"
+pytest-sugar = "*"
+pytest-xdist = "*"
+"pdfminer.six" = "*"
+imagehash = "*"
+daphne = "*"
+# Documentation
+mkdocs-material = "*"
+
+[typing-dev]
+mypy = "*"
+types-Pillow = "*"
+django-filter-stubs = "*"
+types-python-dateutil = "*"
+djangorestframework-stubs = { extras = ["compatible-mypy"], version = "*" }
+celery-types = "*"
+django-stubs = { extras = ["compatible-mypy"], version = "*" }
+types-dateparser = "*"
+types-bleach = "*"
+types-humanfriendly = "*"
+types-redis = "*"
+types-tqdm = "*"
+types-Markdown = "*"
+types-Pygments = "*"
+types-backports = "*"
+types-colorama = "*"
+types-psycopg2 = "*"
+types-setuptools = "*"

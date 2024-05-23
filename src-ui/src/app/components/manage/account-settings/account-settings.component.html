@@ -1,0 +1,19 @@
+<app-page-header title="My Account" i18n-title></app-page-header>
+<form [formGroup]="userForm" (ngSubmit)="save()">
+    <div class="form-body">
+      <div class="row">
+        <app-input-text type="email" i18n-title title="Email" formControlName="username" [error]="error?.username"></app-input-text>
+        <app-input-text i18n-title title="Phone number" formControlName="phone_number" [error]="error?.phone_number" [placeholder]="placeholderNumberOfThePhone"></app-input-text>
+        <app-input-text i18n-title title="First name" formControlName="first_name" [error]="error?.first_name"></app-input-text>
+        <app-input-text i18n-title title="Last name" formControlName="last_name" [error]="error?.first_name"></app-input-text>
+        <app-input-date i18n-title title="Date of Birth" formControlName="date_of_birth" [error]="error?.date_of_birth"></app-input-date>
+      </div>
+    </div>
+    <div class="rest-password">
+        <p i18n>To change your password,<a [routerLink]="['/change-password']">click here</a> </p>
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-outline-secondary" (click)="cancel()" i18n>Cancel</button>
+      <button type="submit" class="btn btn-primary" i18n>Save</button>
+    </div>
+</form>

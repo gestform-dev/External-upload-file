@@ -1,0 +1,5 @@
+app-page-header {
+  &::ng-deep div.mb-3 div.text-truncate p.h2 {
+    margin-bottom: 0 !important;
+  }
+}

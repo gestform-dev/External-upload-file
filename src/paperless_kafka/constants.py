@@ -1,0 +1,4 @@
+ERROR_NO_CURRENT_EVENT_LOOP = "There is no current event loop in thread"
+ENCODE_UTF8 = "utf-8"
+TIMEOUT_POLL_ASYNCIO = 0.1
+KAFKA_BROKER = "KAFKA_BROKER"

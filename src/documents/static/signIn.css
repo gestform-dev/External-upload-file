@@ -1,0 +1,131 @@
+html,
+body {
+  height: 100%;
+}
+
+body {
+  position: relative;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  padding-top: 40px;
+  padding-bottom: 40px;
+  background-color: #f5f5f5;
+  margin: auto;
+}
+
+.bd-placeholder-img {
+  font-size: 1.125rem;
+  text-anchor: middle;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+@media (min-width: 768px) {
+  .bd-placeholder-img-lg {
+    font-size: 3.5rem;
+  }
+}
+
+.form-signIn {
+  width: 100%;
+  max-width: 330px;
+  padding: 15px;
+}
+
+.form-signIn .checkbox {
+  font-weight: 400;
+}
+
+.form-signIn .form-control {
+  position: relative;
+  box-sizing: border-box;
+  height: auto;
+  padding: 10px;
+  font-size: 16px;
+  z-index: 2;
+}
+
+.form-signIn .form-control:not(:placeholder-shown) {
+  position: relative;
+  box-sizing: border-box;
+  height: auto;
+  padding: 10px;
+  font-size: 16px;
+  z-index: 0;
+}
+
+.form-signIn .forgot-password {
+  display: inline-flex;
+  justify-content: flex-end;
+  width: 100%;
+}
+
+svg {
+  max-width: 100%;
+}
+
+#toaster-container {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.gestform-ui-toaster {
+  margin-bottom: 0.2rem;
+  top: 5rem;
+  right: 0.5rem;
+  z-index: 50;
+  display: none;
+  flex-direction: row;
+  padding: 0.5rem;
+  border-radius: 0.25rem;
+  max-width: 15rem;
+  border-left-width: 2px;
+  border-style: none none none solid;
+  background-color: #ffffff;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+
+  --tw-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+  --tw-shadow-colored: 0 1px 3px 0 var(--tw-shadow-color), 0 1px 2px -1px var(--tw-shadow-color);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+
+.message {
+  flex: 1 1 0%;
+  max-width: 100%;
+  overflow: auto;
+  margin-bottom: 0;
+}
+
+.gestform-ui-toaster button.close {
+  padding-left: 0.5rem;
+}
+
+.isInInfo {
+  border-color: #4772ff;
+}
+
+
+.hide {
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0s 0.25s, opacity 0.25s linear;
+}
+
+#revealer {
+  background: none;
+  border: none;
+  position: relative;
+  top: -2.3rem;
+  left: 7.5rem;
+  z-index: 1;
+}

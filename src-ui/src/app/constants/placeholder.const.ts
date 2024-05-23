@@ -1,0 +1,1 @@
+export const EX_NUMBER_PHONE = 'ex: 0612345678';

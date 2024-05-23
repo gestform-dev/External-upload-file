@@ -1,0 +1,75 @@
+<app-page-header title="{{ typeNamePlural | titlecase }}">
+  <button type="button" class="btn btn-sm btn-outline-primary" (click)="openCreateDialog()" *appIfPermissions="{ action: PermissionAction.Add, type: permissionType }" i18n>Create</button>
+</app-page-header>
+
+<div class="row mb-3">
+  <div class="col-md mb-2 mb-xl-0">
+    <div class="form-inline d-flex align-items-center">
+      <label class="text-muted me-2 mb-0" i18n>Filter by:</label>
+      <input class="form-control form-control-sm flex-fill w-auto" type="text" autofocus [(ngModel)]="nameFilter" (keyup)="onNameFilterKeyUp($event)" placeholder="Name" i18n-placeholder>
+    </div>
+  </div>
+
+  <ngb-pagination class="col-auto" [pageSize]="25" [collectionSize]="collectionSize" [(page)]="page" [maxSize]="5" (pageChange)="reloadData()" size="sm" aria-label="Pagination"></ngb-pagination>
+</div>
+
+<table class="table table-striped align-middle border shadow-sm">
+  <thead>
+    <tr>
+      <th scope="col" appSortable="name" [currentSortField]="sortField" [currentSortReverse]="sortReverse" (sort)="onSort($event)" i18n>Name</th>
+      <th scope="col" class="d-none d-sm-table-cell" appSortable="matching_algorithm" [currentSortField]="sortField" [currentSortReverse]="sortReverse" (sort)="onSort($event)" i18n>Matching</th>
+      <th scope="col" appSortable="document_count" [currentSortField]="sortField" [currentSortReverse]="sortReverse" (sort)="onSort($event)" i18n>Document count</th>
+      <th scope="col" *ngFor="let column of extraColumns" appSortable="{{column.key}}" [currentSortField]="sortField" [currentSortReverse]="sortReverse" (sort)="onSort($event)">{{column.name}}</th>
+      <th scope="col" i18n>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let object of data">
+      <td scope="row">{{ object.name }}</td>
+      <td scope="row" class="d-none d-sm-table-cell">{{ getMatching(object) }}</td>
+      <td scope="row">{{ object.document_count }}</td>
+      <td scope="row" *ngFor="let column of extraColumns">
+        <div *ngIf="column.rendersHtml; else colValue" [innerHtml]="column.valueFn.call(null, object) | safeHtml"></div>
+        <ng-template #colValue>{{ column.valueFn.call(null, object) }}</ng-template>
+      </td>
+      <td scope="row">
+        <div class="btn-group d-block d-sm-none">
+          <div ngbDropdown class="d-inline-block">
+            <button type="button" class="btn btn-link" id="actionsMenuMobile" ngbDropdownToggle>
+              <svg class="toolbaricon" fill="currentColor">
+                <use xlink:href="assets/bootstrap-icons.svg#three-dots-vertical" />
+              </svg>
+            </button>
+            <div ngbDropdownMenu aria-labelledby="actionsMenuMobile">
+              <button (click)="filterDocuments(object)" *appIfPermissions="{ action: PermissionAction.View, type: PermissionType.Document }" ngbDropdownItem i18n>Filter Documents</button>
+              <button (click)="openEditDialog(object)" *appIfPermissions="{ action: PermissionAction.Change, type: permissionType }" ngbDropdownItem i18n>Edit</button>
+              <button class="text-danger" (click)="openDeleteDialog(object)" *appIfPermissions="{ action: PermissionAction.Delete, type: permissionType }" ngbDropdownItem i18n>Delete</button>
+            </div>
+          </div>
+        </div>
+        <div class="btn-group d-none d-sm-block">
+          <button class="btn btn-sm btn-outline-secondary" (click)="filterDocuments(object)" *appIfPermissions="{ action: PermissionAction.View, type: PermissionType.Document }">
+            <svg class="buttonicon-sm" fill="currentColor">
+              <use xlink:href="assets/bootstrap-icons.svg#filter" />
+            </svg>&nbsp;<ng-container i18n>Documents</ng-container>
+          </button>
+          <button class="btn btn-sm btn-outline-secondary" (click)="openEditDialog(object)" *appIfPermissions="{ action: PermissionAction.Change, type: permissionType }" [disabled]="!userCanEdit(object)">
+            <svg class="buttonicon-sm" fill="currentColor">
+              <use xlink:href="assets/bootstrap-icons.svg#pencil" />
+            </svg>&nbsp;<ng-container i18n>Edit</ng-container>
+          </button>
+          <button class="btn btn-sm btn-outline-danger" (click)="openDeleteDialog(object)" *appIfPermissions="{ action: PermissionAction.Delete, type: permissionType }" [disabled]="!userCanDelete(object)">
+            <svg class="buttonicon-sm" fill="currentColor">
+              <use xlink:href="assets/bootstrap-icons.svg#trash" />
+            </svg>&nbsp;<ng-container i18n>Delete</ng-container>
+          </button>
+        </div>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="d-flex">
+  <div i18n *ngIf="collectionSize > 0">{collectionSize, plural, =1 {One {{typeName}}} other {{{collectionSize || 0}} total {{typeNamePlural}}}}</div>
+  <ngb-pagination *ngIf="collectionSize > 20" class="ms-auto" [pageSize]="25" [collectionSize]="collectionSize" [(page)]="page" [maxSize]="5" (pageChange)="reloadData()" size="sm" aria-label="Pagination"></ngb-pagination>
+</div>

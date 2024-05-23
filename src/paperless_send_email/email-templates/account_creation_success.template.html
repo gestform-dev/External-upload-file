@@ -1,0 +1,83 @@
+<!doctype html>
+<html>
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<title>Confirmation de la création de votre compte</title>
+		<style>
+			@media only screen and (max-width: 800px) {
+				table.body .container {
+					padding: 0 !important;
+					width: 100% !important;
+				}
+
+				table.body .main {
+					border-left-width: 0 !important;
+					border-radius: 0 !important;
+					border-right-width: 0 !important;
+				}
+
+				table.body .img-responsive {
+					height: auto !important;
+					max-width: 100% !important;
+					width: auto !important;
+				}
+			}
+		</style>
+	</head>
+
+	<body style="background-color: #f6f6f6; font-family: sans-serif; -webkit-font-smoothing: antialiased; font-size: 16px; line-height: 1.4; margin: 0; padding: 0; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%;">
+
+		<table role="global" class="body" style="margin-top: 20px;border-collapse: separate; mso-table-lspace: 0pt; mso-table-rspace: 0pt; background-color: #f6f6f6; width: 100%;">
+			<tr>
+				<td class="container" style="font-family: sans-serif; font-size: 16px; vertical-align: top; display: block; max-width: 800px; width: 800px; margin: 0 auto; background-color: #FFFFFF;">
+
+					<!-- HEADER -->
+					<table role="header" class="main" style="border-collapse: separate; mso-table-lspace: 0pt; mso-table-rspace: 0pt; width: 100%;">
+						<tr>
+							{{#if logo_url}}
+							<td id="logo" style="vertical-align: top; padding-bottom: 10px; padding-top: 10px; text-align: center;" >
+								<img src="{{logo_url}}" alt="Logo" style="width: 150px; display: block; padding-left: 20px; margin:0px">
+							</td>
+							{{/if}}
+							<td id="title" style="vertical-align: bottom; text-align: center; padding-right: 150px;">
+								<span style="font-family: sans-serif; font-size: 22px; font-weight: normal; text-align: center; color: black;" >CONFIRMATION DE LA CRÉATION DE VOTRE COMPTE</span>
+							</td>
+						</tr>
+						<tr>
+							<td id="orange-line" colspan = "2">
+								<hr style="height: 3px; background-color: #F56500; border: 0; color: #F56500;">
+							</td>
+						</tr>
+					</table>
+
+					<!-- MESSAGE -->
+					<table role="message" style="border-collapse: separate; mso-table-lspace: 0pt; mso-table-rspace: 0pt; width: 100%; padding: 30px;">
+						<tr>
+							<td style="font-family: sans-serif; font-size: 16px; vertical-align: top;">
+								<p style="font-family: sans-serif; font-size: 16px; font-weight: normal; margin: 0; margin-bottom: 15px;">Bonjour <span style="font-weight: bold; text-transform: capitalize;">{{first_name}}</span> <span style="font-weight: bold; text-transform: capitalize;">{{last_name}}</span>,</p>
+								<p style="font-family: sans-serif; font-size: 16px; font-weight: normal; margin: 0; margin-bottom: 15px;"></p>
+								<p style="font-family: sans-serif; font-size: 16px; font-weight: normal; margin: 0; margin-bottom: 15px;">Ce compte est maintenant activé, vous pouvez dès à présent envoyer vos documents.</p>
+								<p style="font-family: sans-serif; font-size: 16px; font-weight: normal; margin: 0; margin-bottom: 15px;">Cordialement,</p>
+								<p style="font-family: sans-serif; font-size: 16px; font-weight: normal; margin: 0; margin-bottom: 50px;">L’équipe Gestion du personnel - Pôle transverse</p>
+								<p style="font-family: sans-serif; font-size: 16px; font-weight: normal; font-style: italic; margin: 0; margin-bottom: 15px;">Ceci est un message automatique, merci de ne pas répondre à l’expéditeur.</p>
+							</td>
+						</tr>
+					</table>
+
+					<!-- FOOTER -->
+					<table role="footer" style="border-collapse: separate; mso-table-lspace: 0pt; mso-table-rspace: 0pt; width: 100%;">
+						<tr>
+							{{#if signature_url}}
+							<td id="sign" style="vertical-align: top; padding-bottom: 10px; padding-top: 10px;">
+								<img src="{{signature_url}}" alt="Signature img" class="img-responsive" style="display:block; margin:0px auto;">
+							</td>
+							{{/if}}
+						</tr>
+					</table>
+
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>

@@ -1,0 +1,26 @@
+{
+    "ACCOUNT_CREATION_SUCCESS": {
+        "campaignName": "Création de compte OK",
+        "message": "Création de compte OK"
+    },
+    "ACCOUNT_CREATION_FAILURE": {
+        "campaignName": "Création de compte KO",
+        "message": "Création de compte KO"
+    },
+    "RESET_PASSWORD_SUCCESS": {
+        "campaignName": "Réinitialisation de mot de pass OK",
+        "message": "Réinitialisation de mot de pass OK"
+    },
+    "MODIFY_ACCOUNT_SUCCESS": {
+        "campaignName": "Modification de compte OK",
+        "message": "Modification de compte OK"
+    },
+    "DEPOSIT_DOCUMENT_SUCCESS": {
+        "campaignName": "Dépôt de document OK",
+        "message": "Dépôt de document OK"
+    },
+    "DEPOSIT_DOCUMENT_ERROR": {
+        "campaignName": "Dépôt de document KO",
+        "message": "Dépôt de document KO"
+    }
+}

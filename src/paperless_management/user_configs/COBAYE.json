@@ -1,0 +1,46 @@
+{
+	"document": {
+		"allowed_extensions": [
+			"jpg",
+			"jpeg",
+			"png",
+			"heic",
+			"tiff",
+			"tif",
+			"pdf"
+		],
+		"batch_keyword": "LOT",
+		"batch_type": "BY_DAY",
+		"flow_type": "N",
+		"max_allowed_size_in_MB": 10
+	},
+	"template_mail": {
+		"logo_url": "",
+		"signature_url": ""
+	},
+	"personss": [
+		{
+			"id": "COBAYE_01",
+			"db": "COBAYE",
+			"table": "t_referentiel_salarie_cobaye",
+			"verification_fields": [
+				"last_name",
+				"first_name"
+			],
+			"db_fields_association": {
+				"last_name": "T_COL_NOM_EMP",
+				"first_name": "T_COL_PRENOM_EMP",
+				"date_of_birth": "T_COL_DATE_NAISSANCE_EMP"
+			}
+		}
+	],
+	"notifications": {
+		"sms_settings": []
+	},
+	"faq": [
+		{
+			"question": "question 1",
+			"response": "response 1"
+		}
+	]
+}

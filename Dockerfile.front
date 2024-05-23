@@ -1,0 +1,18 @@
+# Stage: compile-frontend
+# Purpose: Compiles the frontend
+
+FROM --platform=$BUILDPLATFORM docker.io/node:20-bullseye-slim AS compile-frontend
+
+COPY ./src-ui /src-ui
+COPY ./package.json /package.json
+
+WORKDIR /src-ui
+RUN npm install -g @angular/cli
+RUN npm install
+RUN set -eux \
+  && npm update npm -g \
+  && npm ci --omit=optional
+
+EXPOSE 4200
+
+CMD ["ng", "serve", "--host", "0.0.0.0", "--port", "4200", "--disable-host-check" , "-- poll", "2000"]

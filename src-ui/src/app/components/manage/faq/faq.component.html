@@ -1,0 +1,15 @@
+<app-page-header title="FAQ : Dépôt de fichiers" i18n-title></app-page-header>
+
+<body>
+  <div class='faq'>
+    <div *ngFor="let question of this.faqConfig | keyvalue; let index=index">
+      <label for='check-{{index.toString()}}' (click)="toggleVisibility(index)">
+        <p class=" faq-heading">{{this.faqConfig[index].question}}</p>
+        <div class='faq-arrow' [ngClass]="this.faqConfig[index].isVisible ? 'arrow-visible' : 'arrow-invisible'"></div>
+        <p class="faq-text" *ngIf="this.faqConfig[index].isVisible"
+          [innerHTML]="transformToSafeHtml(this.faqConfig[index].response)">
+        </p>
+      </label>
+    </div>
+  </div>
+</body>

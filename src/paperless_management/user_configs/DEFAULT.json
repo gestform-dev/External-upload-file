@@ -1,0 +1,49 @@
+{
+	"document": {
+		"allowed_extensions": [
+			"jpg",
+			"jpeg",
+			"png",
+			"heic",
+			"tiff",
+			"tif",
+			"pdf"
+		],
+		"batch_keyword": "LOT",
+		"batch_type": "BY_DAY",
+		"flow_type": "N",
+		"max_allowed_size_in_MB": 10
+	},
+	"template_mail": {
+		"logo_url": "",
+		"signature_url": ""
+	},
+	"persons": [
+		{
+			"id": "DEFAULT_01",
+			"db": "DEFAULT",
+			"verification_fields": [
+				"last_name",
+				"first_name",
+				"date_of_birth"
+			],
+			"required_fields": [
+			],
+			"db_fields_association": {
+			}
+		}
+	],
+	"notifications": {
+		"sms_settings": [
+			"ACCOUNT_CREATION_SUCCESS",
+			"DEPOSIT_FILE_SUCCESS",
+			"RESET_PASSWORD_SUCCESS"
+		]
+	},
+	"faq": [
+		{
+			"question": "test1",
+			"response": "test2"
+		}
+	]
+}
